@@ -1,0 +1,49 @@
+﻿@model SearchFunctionality.Models.employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+    </dl>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <style>
+            .form-actions a {
+                text-decoration: none !important;
+                font-weight: bold;
+                background-color: black;
+                border-radius: 20px;
+                padding: 2px 5px;
+                color: white;
+            }
+        </style>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> <br /> <hr />
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

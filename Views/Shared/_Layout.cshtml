@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<style>
+    .navbar-nav li a {
+        text-decoration: none !important;
+        font-weight: bold;
+        background-color: black;
+        border-radius: 20px;
+        padding: 3px 6px;
+        color: white;
+    }
+</style>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="margin: 0 auto !important; width: 90% !important; border-radius: 15px;">
+        <div class="container">
+            <div class="navbar-header">
+               
+              <i>  @Html.ActionLink("Bold Touch", "You have to log in first", new { area = "" }, new { @class = "navbar-brand text-danger fw-bold" })</i>
+            </div>
+            <div class="navbar-expand">
+                <ul class="nav navbar-nav" style="float:right !important">
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+
+                    <li class="ms-3">@Html.ActionLink("Signup", "Signup", "Account")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+       
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
